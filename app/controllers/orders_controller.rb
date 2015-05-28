@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
     puts nonce
    # render action: :new and return unless nonce
     result = Braintree::Transaction.sale(
-      amount: "10.00",
+      amount: "50.00",
       payment_method_nonce: nonce
     )
     @result = result
