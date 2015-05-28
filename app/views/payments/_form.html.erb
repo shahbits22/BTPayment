@@ -1,0 +1,21 @@
+
+<%= form_tag orders_path, method: 'post' do %>
+  <div id="dropin"></div>
+  <input type="submit" value="Pay $10">
+<% end %>
+<%= @params %>
+<%=@client_token%>
+
+<script type="text/javascript">
+  function setupBT() {
+    braintree.setup("<%=@client_token%>", 'dropin', {
+      container: 'dropin'
+    });
+  }
+  if (window.addEventListener)
+    window.addEventListener("load", setupBT, false);
+  else if (window.attachEvent)
+    window.attachEvent("onload", setupBT);
+  else window.onload = setupBT;
+  </script>
+</script>
