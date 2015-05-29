@@ -1,7 +1,7 @@
 
 <%= form_tag orders_path, method: 'post' do %>
   <div id="dropin"></div>
-  <input type="submit" value="Pay $10">
+  <input type="submit" class="btn btn-primary active" role="button" value="Pay $50">
 <% end %>
 <%= @params %>
 <%=@client_token%>
